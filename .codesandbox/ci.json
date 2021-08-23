@@ -1,0 +1,5 @@
+{
+  "packages": ["dist"],
+  "sandboxes": ["react-typescript-react-ts", "simple-snowpack-react-o1gmx"],
+  "node": "12"
+}
