@@ -13,7 +13,11 @@
 
 ## Install
 
-Package Pending
+```sh
+$ npm install @barelyhuman/set-state-hook
+# or
+$ yarn add @barelyhuman/set-state-hook
+```
 
 ## Usage
 
