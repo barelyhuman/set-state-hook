@@ -3,6 +3,7 @@ import * as assert from 'uvu/assert'
 import { useSetState } from '../dist'
 import * as React from 'react'
 import { render } from '@testing-library/react'
+require('./setup/env')
 
 test('check if state is readable', async () => {
   function Component () {

@@ -21,7 +21,7 @@
     "dev": "wrap --watch",
     "build": "wrap",
     "fix": "wrap --fix",
-    "test": "uvu -r @babel/register -r global-jsdom/register tests",
+    "test": "uvu tests",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -59,8 +59,6 @@
       [
         "@babel/preset-env",
         {
-          "useBuiltIns": "usage",
-          "corejs": 3,
           "targets": "> 0.25%, not dead"
         }
       ],
