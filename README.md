@@ -1,4 +1,4 @@
-<h1 align="center">use-set-state</h1>
+<h1 align="center">set-state-hook</h1>
 <p align="center">Simple SetState Equivalent Using Immer</p>
 
 <p>If you like any of my work, you can support me on: <a href="https://barelyhuman.dev/donate">https://barelyhuman.dev/donate</a></p>
@@ -16,7 +16,29 @@ Package Pending
 
 ## Usage
 
-TBD
+```jsx
+import { useSetState } from "@barelyhuman/set-state-hook";
+
+function Component() {
+  const [state, setState] = useSetState({
+    name: "Reaper",
+    age: 16,
+  });
+
+  React.useEffect(() => {
+    setState({
+      name: "Hello World",
+    });
+  }, [setState]);
+
+  return (
+    <>
+      <p>name: {state.name}</p>
+      <p>age: {state.age}</p>
+    </>
+  );
+}
+```
 
 ## Roadmap
 
