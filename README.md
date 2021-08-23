@@ -1,8 +1,7 @@
 <h1 align="center">use-set-state</h1>
 <p align="center">Simple SetState Equivalent Using Immer</p>
 
-If you like any of my work, you can support me on: https://barelyhuman.dev/donate
-
+<p>If you like any of my work, you can support me on: <a href="https://barelyhuman.dev/donate">https://barelyhuman.dev/donate</a></p>
  <p align="center">
  <img alt="GitHub" src="https://img.shields.io/github/license/barelyhuman/use-set-state?logoColor=000&colorA=000000&colorB=000000">
 <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?colorA=000000&colorB=000000" alt="JavaScript Style Guide"></a>
@@ -11,23 +10,24 @@ If you like any of my work, you can support me on: https://barelyhuman.dev/donat
  <a href="https://www.npmjs.com/package/@barelyhuman/use-set-state"><img src="https://img.shields.io/npm/dt/@barelyhuman/use-set-state.svg?style=flat&amp;colorA=000000&amp;colorB=000000" alt="Downloads"></a>
  </p>
 
+## Install
+
+Package Pending
+
+## Usage
+
+TBD
+
 ## Roadmap
 
-- tests
+- add tests
 - expose immer utils
 - optimise the cloning logic
 
-## Motivation
-
-TBD
-
 ## Features
 
-TBD
-
-## Contribute
-
-TBD
+- Easier state management for dependent state fields
+- Immutable and rock-solid and easy to handle (thanks to [immerjs](https://github.com/immerjs/immer))
 
 ## License
 
