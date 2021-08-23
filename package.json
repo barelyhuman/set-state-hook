@@ -1,0 +1,66 @@
+{
+  "name": "@barelyhuman/use-set-state",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "module": "./dist/index.mjs",
+  "license": "MIT",
+  "publishConfig": {
+    "public": true
+  },
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "wrap --watch",
+    "build": "wrap",
+    "fix": "wrap --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "immer": "^9.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@barelyhuman/wrap": "^0.0.7-dev.2",
+    "@rollup/plugin-babel": "^5.3.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "rollup": "^2.56.2",
+    "standard": "^16.0.3"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run fix"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "standard": {
+    "globals": [],
+    "ignore": [
+      "node_modules",
+      "dist"
+    ]
+  },
+  "wrap": {
+    "external": [
+      "react"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}
