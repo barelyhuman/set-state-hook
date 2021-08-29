@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export function useSetState (
   initState,
@@ -6,25 +6,28 @@ export function useSetState (
 ) {
   const [internalState, setInternalState] = useState(initState || {})
 
-  const setState = (_setterState) => {
-    setInternalState((prevState) => {
-      if (typeof _setterState === 'function') {
-        return _setterState(cloneDeep(prevState))
-      }
+  const setState = useCallback(
+    (_setterState) => {
+      setInternalState((prevState) => {
+        if (typeof _setterState === 'function') {
+          return _setterState(cloneDeep(prevState))
+        }
 
-      const clone = cloneDeep(prevState)
+        const clone = cloneDeep(prevState)
 
-      Object.keys(_setterState).forEach((key) => {
-        clone[key] = _setterState[key]
+        Object.keys(_setterState).forEach((key) => {
+          clone[key] = _setterState[key]
+        })
+
+        if (options.log) {
+          options.logger({ prevState: prevState, state: clone })
+        }
+
+        return clone
       })
-
-      if (options.log) {
-        options.logger({ prevState: prevState, state: clone })
-      }
-
-      return clone
-    })
-  }
+    },
+    [setInternalState]
+  )
 
   return [internalState, setState]
 }
