@@ -1,4 +1,3 @@
-import { produce } from 'immer'
 import { useState } from 'react'
 
 export function useSetState (
@@ -10,24 +9,53 @@ export function useSetState (
   const setState = (_setterState) => {
     setInternalState((prevState) => {
       if (typeof _setterState === 'function') {
-        return produce(prevState, _setterState)
+        return _setterState(cloneDeep(prevState))
       }
 
-      const modifiedState = produce(prevState, (draftState) => {
-        Object.keys(_setterState).forEach((key) => {
-          draftState[key] = _setterState[key]
-        })
+      const clone = cloneDeep(prevState)
 
-        if (options.log) {
-          options.logger({ prevState: internalState, state: draftState })
-        }
-
-        return draftState
+      Object.keys(_setterState).forEach((key) => {
+        clone[key] = _setterState[key]
       })
 
-      return modifiedState
+      if (options.log) {
+        options.logger({ prevState: prevState, state: clone })
+      }
+
+      return clone
     })
   }
 
   return [internalState, setState]
+}
+
+function cloneDeep (toClone) {
+  if (toClone === null || typeof toClone !== 'object') return toClone
+
+  switch (toClone.constructor) {
+    case Boolean:
+      return Boolean(toClone)
+    case Number:
+      return Number(toClone)
+    case String:
+      return String(toClone)
+    case Date:
+      return Date().setTime(toClone.getTime())
+    case Array:
+      return toClone.map((o) => cloneDeep(o))
+    case RegExp:
+      return RegExp(toClone)
+    case BigInt:
+      return BigInt(toClone)
+    case Object: {
+      const copy = {}
+      Object.keys(toClone).forEach((key) => {
+        if (Object.prototype.hasOwnProperty.call(toClone, key)) {
+          copy[key] = cloneDeep(toClone[key])
+        }
+      })
+      return copy
+    }
+  }
+  return toClone
 }

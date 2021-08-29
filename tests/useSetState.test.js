@@ -7,7 +7,7 @@ require('./setup/env')
 
 test('check if state is readable', async () => {
   function Component () {
-    const [state, setState] = useSetState({
+    const [state] = useSetState({
       name: 'Reaper',
       age: 16
     })
