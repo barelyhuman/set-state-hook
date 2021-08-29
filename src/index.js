@@ -43,7 +43,7 @@ function cloneDeep (toClone) {
     case String:
       return String(toClone)
     case Date:
-      return Date().setTime(toClone.getTime())
+      return new Date(new Date().setTime(toClone.getTime()))
     case Array:
       return toClone.map((o) => cloneDeep(o))
     case RegExp:
