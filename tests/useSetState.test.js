@@ -2,8 +2,12 @@ import { test } from 'uvu'
 import * as assert from 'uvu/assert'
 import { useSetState } from '../dist'
 import * as React from 'react'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 require('./setup/env')
+
+test.before.each(() => {
+  cleanup()
+})
 
 test('check if state is readable', async () => {
   function Component () {
@@ -34,6 +38,32 @@ test('check if a single state changed', async () => {
     React.useEffect(() => {
       setState({
         name: 'Hello World'
+      })
+    }, [setState])
+
+    return (
+      <>
+        <p>name: {state.name}</p>
+        <p>age: {state.age}</p>
+      </>
+    )
+  }
+
+  const { findByText } = render(<Component />)
+  assert.ok(await findByText('name: Hello World'))
+})
+
+test('check if a single state changed with function update', async () => {
+  function Component () {
+    const [state, setState] = useSetState({
+      name: 'Reaper',
+      age: 16
+    })
+
+    React.useEffect(() => {
+      setState((prevState, draftState) => {
+        draftState.name = 'Hello World'
+        return draftState
       })
     }, [setState])
 
