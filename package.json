@@ -1,5 +1,6 @@
 {
   "name": "@barelyhuman/set-state-hook",
+  "description": "Simple setState equivalent with mutable drafts",
   "version": "0.0.4",
   "main": "dist/index.js",
   "source": "src/index.js",
@@ -76,5 +77,12 @@
   },
   "peerDependencies": {
     "react": "^16.8.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "setState",
+    "hook",
+    "mutable",
+    "state"
+  ]
 }
