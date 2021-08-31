@@ -1,6 +1,6 @@
 {
   "name": "@barelyhuman/set-state-hook",
-  "version": "0.0.4-3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "source": "src/index.js",
   "module": "./dist/index.esm.js",
