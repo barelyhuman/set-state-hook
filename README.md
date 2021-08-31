@@ -36,6 +36,15 @@ function Component() {
     });
   }, [setState]);
 
+  // or
+
+  React.useEffect(() => {
+    setState((prevState, draftState) => {
+      draftState.name = "Hello World";
+      return draftState;
+    });
+  }, [setState]);
+
   return (
     <>
       <p>name: {state.name}</p>
@@ -44,12 +53,6 @@ function Component() {
   );
 }
 ```
-
-## Roadmap
-
-- add tests
-- expose immer utils
-- optimise the cloning logic
 
 ## Features
 

@@ -10,7 +10,7 @@ export function useSetState (
     (_setterState) => {
       setInternalState((prevState) => {
         if (typeof _setterState === 'function') {
-          return _setterState(cloneDeep(prevState))
+          return _setterState(prevState, cloneDeep(prevState))
         }
 
         const clone = cloneDeep(prevState)

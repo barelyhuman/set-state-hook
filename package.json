@@ -47,7 +47,7 @@
     "*": [
       "npm run test"
     ],
-    "*.{js}": [
+    "*.js": [
       "npm run fix"
     ]
   },
