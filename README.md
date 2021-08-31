@@ -8,7 +8,7 @@
 <a href="https://bundlephobia.com/result?p=@barelyhuman/set-state-hook"><img src="https://img.shields.io/bundlephobia/min/@barelyhuman/set-state-hook?label=bundle%20size&amp;style=flat&amp;colorA=000000&amp;colorB=000000" alt="Build Size"></a>
  <a href="https://www.npmjs.com/package/@barelyhuman/set-state-hook"><img src="https://img.shields.io/npm/v/@barelyhuman/set-state-hook?style=flat&amp;colorA=000000&amp;colorB=000000" alt="Version"></a>
  <a href="https://www.npmjs.com/package/@barelyhuman/set-state-hook"><img src="https://img.shields.io/npm/dt/@barelyhuman/set-state-hook.svg?style=flat&amp;colorA=000000&amp;colorB=000000" alt="Downloads"></a>
- <a href="https://github.com/barelyhuman/set-state-hook/actions/workflows/test.yml"><img src="https://img.shields.io/github/workflow/status/barelyhuman/set-state-hook/test?colorA=000&colorB=000" alt=""></a>
+ <a href="https://github.com/barelyhuman/set-state-hook/actions/workflows/test.yml"><img src="https://img.shields.io/github/workflow/status/barelyhuman/set-state-hook/test?colorA=000&colorB=000&label=test" alt=""></a>
  </p>
 
 ## Install
